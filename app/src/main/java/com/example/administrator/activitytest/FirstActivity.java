@@ -51,8 +51,13 @@ public class FirstActivity extends AppCompatActivity {
 //                intent.setData(Uri.parse("http://www.baidu.com"));
 //                startActivity(intent);
                 //使用隐式Intent拨打电话
-                Intent intent = new Intent(Intent.ACTION_DIAL);
-                intent.setData(Uri.parse("tel:10086"));
+//                Intent intent = new Intent(Intent.ACTION_DIAL);
+//                intent.setData(Uri.parse("tel:10086"));
+//                startActivity(intent);
+                //向下一个活动传递数据
+                String data = "Hello SecondActivity";
+                Intent intent = new Intent(FirstActivity.this,SecondActivity.class);
+                intent.putExtra("extra_data",data);
                 startActivity(intent);
             }
         });
